@@ -1,2 +1,5 @@
 client_id: <%= ENV["GG_DRVIER_CLIENT_ID"] %>
 client_secret: <%= ENV["GG_DRVIER_CLIENT_SECRET"] %>
+access_token: <%= ENV["GG_DRVIER_ACCESS_TOKEN"]%>
+refresh_token: <%=ENV["GG_DRVIER_REFRESH_TOKEN"]%>
+scope: 'https://www.googleapis.com/auth/drive'
