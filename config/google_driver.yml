@@ -1,0 +1,2 @@
+client_id: <%= ENV["GG_DRVIER_CLIENT_ID"] %>
+client_secret: <%= ENV["GG_DRVIER_CLIENT_SECRET"] %>
