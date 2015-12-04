@@ -51,3 +51,6 @@ puts "No files found" if results.data.items.empty?
 results.data.items.each do |file|
   puts "#{file.title} (#{file.id})"
 end
+
+
+#Nen chu y Access_token , vi no thuong xuyen thay doi, ko phai nhu Access_token cua facebook
