@@ -4,4 +4,4 @@ GG_DRVIER_CLIENT_ID: '782071649992-7uhe1uifqf6rvrp9veqaqf2o545tcmkl.apps.googleu
 GG_DRVIER_CLIENT_SECRET: 'PHtDN-lquWfrsPr7yXsD060p'
 GG_DRVIER_ACCESS_TOKEN: 'ya29.QAI_VtLK-Et76EFWvXjBcoLRp06CbGW0ewDQNsVz1Fmchi4U0s0hnMUMLDmP8YOVaO1iGg'
 GG_DRVIER_REFRESH_TOKEN: '1/KJjTIHGy9KS_Y38v4vXf1r9HDE6MUqJKusYlk7bnG0VIgOrJDtdun6zK6XiATCKT'
-#Nen chu y Access_token , vi no thuong xuyen thay doi, ko phai nhu Access_token cua facebook
+#Ghi chu: Nen chu y Access_token , vi no thuong xuyen thay doi, ko phai nhu Access_token cua facebook

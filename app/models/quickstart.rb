@@ -34,6 +34,8 @@ def authorize
     auth = flow.authorize(storage)
     puts "Credentials saved to #{CREDENTIALS_PATH}" unless auth.nil?
   end
+  puts auth.methods
+  puts auth.access_token
   auth
 end
 
@@ -53,4 +55,3 @@ results.data.items.each do |file|
 end
 
 
-#Nen chu y Access_token , vi no thuong xuyen thay doi, ko phai nhu Access_token cua facebook
