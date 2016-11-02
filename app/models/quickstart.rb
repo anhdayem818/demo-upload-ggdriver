@@ -9,7 +9,7 @@ APPLICATION_NAME = 'Drive API Ruby Quickstart'
 CLIENT_SECRETS_PATH = 'client_secret_2.json'
 CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
                              "drive-ruby-quickstart-2.json")
-SCOPE = 'https://www.googleapis.com/auth/drive'
+SCOPE = 'https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/androidpublisher'
 
 ##
 # Ensure valid credentials, either by restoring from the saved credentials
@@ -24,7 +24,7 @@ def authorize
   file_store = Google::APIClient::FileStore.new(CREDENTIALS_PATH)
   storage = Google::APIClient::Storage.new(file_store)
   auth = storage.authorize
-
+  puts 123 unless auth.nil?
   if auth.nil? || (auth.expired? && auth.refresh_token.nil?)
     app_info = Google::APIClient::ClientSecrets.load(CLIENT_SECRETS_PATH)
     flow = Google::APIClient::InstalledAppFlow.new({
@@ -34,6 +34,7 @@ def authorize
     auth = flow.authorize(storage)
     puts "Credentials saved to #{CREDENTIALS_PATH}" unless auth.nil?
   end
+  puts ENV["GG_CLIENT_ID"]
   puts auth.methods
   puts auth.access_token
   auth
@@ -53,5 +54,17 @@ puts "No files found" if results.data.items.empty?
 results.data.items.each do |file|
   puts "#{file.title} (#{file.id})"
 end
+androidpublisher_api = client.discovered_api('androidpublisher', 'v2')
+puts androidpublisher_api.methods
 
+results = client.execute!(
+  :api_method => androidpublisher_api.reviews.list,
+  :parameters => { :maxResults => 10, :packageName => 'com.playz.minecraft.skins' })
 
+puts "=============== "
+puts results.data
+puts "==============="
+puts results.data.to_json
+# results.data.items.each do |file|
+#   puts file
+# end
